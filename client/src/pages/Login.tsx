@@ -32,17 +32,15 @@ const Login = () => {
         email,
         password
       })
-      localStorage.setItem("token", response.data.token);
-      navigate("/");
-    } catch (error: any) {
+      localStorage.setItem("token", response.data.token)
+      navigate("/")
+    } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
-        setError(error.response?.data?.message || "An error occured");
-      } else {
-     console.error(error);
-      }    
+        setError(error.response?.data?.message)
+      }   
     }
     finally{
-      setLoading(false);
+      setLoading(false)
     }
   }
 

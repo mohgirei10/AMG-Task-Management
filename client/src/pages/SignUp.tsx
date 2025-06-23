@@ -52,11 +52,9 @@ const SignUp = () => {
       setMessage(true)
 
     } catch (error: any) {
-      // if (axios.isaxio(error)) {
-      //   setError(error.response?.data?.message)
-      // }
-      console.error(error);
-         
+      if (axios.isAxiosError(error)) {
+        setError(error.response?.data?.message)
+      } 
     }
     finally{
       setLoading(false)
